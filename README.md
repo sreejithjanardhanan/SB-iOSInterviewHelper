@@ -40,6 +40,7 @@ This cheat sheet to crack interview for iOS
 34. OOPS
 35. Memory management
 36. Properties in swift, ARC, Auto release
+
 37.Threads and operations queue
 38. Dependency injection
 39. Unit test case
