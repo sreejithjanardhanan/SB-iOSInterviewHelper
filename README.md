@@ -11,7 +11,7 @@ This cheat sheet to crack interview for iOS
 5. Design patterns
 6. How to pass variable as reference
 7. Generics - example
-8.  Lazy
+8. Lazy
 9. Defer
 10. Guard vs if else
 11. Closure - example 
@@ -40,8 +40,7 @@ This cheat sheet to crack interview for iOS
 34. OOPS
 35. Memory management
 36. Properties in swift, ARC, Auto release
-
-37.Threads and operations queue
+37. Threads and operations queue
 38. Dependency injection
 39. Unit test case
 40. Bluetooth - normal and classic
