@@ -1,50 +1,61 @@
-Answers:
+# Answers:
 
-1. Bounds vs frames:
+1.Bounds vs frames
+
 Bounds - relative to its own coordinate system.
 Frame - relative to superview it is contained within.
 
 2. Operator overloading vs method overloading vs method overriding:
+
 Operator overloading - existing operators(-, +, /, *) behave with types.
-Method Overloading -  same method name but different parameters. Compile time
-Method Overriding - same method name and parameters. Parent class - child class. Run time. Polymorphism applies overriding not overloading.
+
+Method Overloading -  same method name but different parameters. Compile time.
+
+Method Overriding - same method name and parameters. Parent class - child class. Run time. 
+Polymorphism applies overriding not overloading.
 
 3. Advantages of swift:
-- Compile time programming language
-- Open source
-- Safer platform/Type-safe language - fix errors in compile time
-- Readability - clean syntax
-- Maintenance - less code, one file  
-- Built in Error handling
-- Closures
-- Tuples
-- Optional Types - crash resistant
-- Fast/High speed - LLVM compiler transforms swift code into optimised native code.
+
+Compile time programming language
+Open source
+Safer platform/Type-safe language - fix errors in compile time
+Readability - clean syntax
+Maintenance - less code, one file  
+Built in Error handling
+Closures
+Tuples
+Optional Types - crash resistant
+Fast/High speed - LLVM compiler transforms swift code into optimised native code.
 
 4. Difference between class and structure when to use:
-- Type casting
-- Reference counting 
-- Inheritance
-- Deinitializers
-- Structs are value types and pass by value, Classes are reference types 
+
+Type casting
+Reference counting 
+Inheritance
+Deinitializers
+Structs are value types and pass by value, Classes are reference types 
 and pass by reference. 
-- Structures are always copied when they are passed around, no 
+Structures are always copied when they are passed around, no 
 reference counting.
 
 Structure :
-- Primary purpose is to encapsulate simple data values.
-- Encapsulated values will be copied rather than referenced.
-- Any properties stored are themselves value types.
-- No inheritance
+
+Primary purpose is to encapsulate simple data values.
+Encapsulated values will be copied rather than referenced.
+Any properties stored are themselves value types.
+No inheritance
 
 Class:
-- Pass by reference
+
+Pass by reference
 
 5. Design patterns:
+
 Reusable solution to common problems in software design. Templates - easy to understand - reuse.
-- Creational - Singleton
-- Structural - Decorator, Adaptor, Facade
-- Behavioural - Observer and Memento
+
+Creational - Singleton
+Structural - Decorator, Adaptor, Facade
+Behavioural - Observer and Memento
 
 Singleton - Single instance, global access point, lazy loading.
 Decorator - Extensions and delegation, adds behaviour and responsibilities without modifying code.
@@ -54,6 +65,7 @@ Observer - Notifications and KVO, notifies other object of any state changes.
 Memento - externalised state restored without violating encapsulation; private data remains private, Apple - Archiving and state restoration.
 
 6. How to pass variable as reference:
+
 inout -  Modifying the local variable will also modify the passed-in parameters. Point original data in memory.
     var value: String = “Apple”
     func changeString(newValue:inout String) {
@@ -64,8 +76,10 @@ inout -  Modifying the local variable will also modify the passed-in parameters.
     changeString(newValue:&value)
 
 7. Generics - example
+
 Write flexible, reusable functions and types that can work with any type. Avoid duplication and expresses its intent in a clear, abstracted manner.
-- Swift’s Array and Dictionary types are both generic collections.
+
+Swift’s Array and Dictionary types are both generic collections.
 eg:
     func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
          let temporaryA = a
@@ -84,6 +98,7 @@ eg:
     print (“str2:”, str2) //output: a
 
 8. Lazy
+
 - Delaying the creation of an object or some other expensive process until it’s needed. 
 - Use only with Class and struct member. 
 - Not thread safe because of not initialised automatically .
