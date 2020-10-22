@@ -58,7 +58,7 @@ Structural - Decorator, Adaptor, Facade
 Behavioural - Observer and Memento
 
 Singleton - Single instance, global access point, lazy loading.
-Decorator - Extensions and delegation, adds behaviour and responsibilities without modifying code.
+Decorator - Extensions and delegation, adds behaviour and responsibilities without modifying code.Its alternative to subclass.
 Adaptor - Standard interface, incompatible interface to work together.
 Facade - Single interface to complex subsystem.
 Observer - Notifications and KVO, notifies other object of any state changes.
