@@ -26,6 +26,7 @@ Closures
 Tuples
 Optional Types - crash resistant
 Fast/High speed - LLVM compiler transforms swift code into optimised native code.
+Support dynamic library.
 
 4. Difference between class and structure when to use:
 
