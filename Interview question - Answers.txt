@@ -410,14 +410,14 @@ Based on reference-counting.
 Each object defined in Swift has an implicit variable called a reference count. 
 This reference count is increased whenever an object is referenced somewhere, and so decreased when the object is not referenced anymore.
 
-36. Properties in swift(atomic & non-atomic, assign, strong, weak, retain and copy)
+36. Properties in swift, ARC, Auto release(atomic & non-atomic, assign, strong, weak, retain and copy)
 Stored property - store variable and constant, Given by class & struct, Can’t define in extension.
 Computed property - calculated rather than store, always var, given by class, struct, enum, provide getter and optional setter.
 Lazy stored property - initial value is not calculated till the time of use. Always variable.
 Property observer - observe and respond to changes in property value. Defined on stored property, overridden stored and computer property. Not defined on computational property, lazy stored property.
 Type property(static) - only one copy.
 
-37.Threads, Operations queue and GCD.
+37.Threads, Operations queue and GCD
 Low-level API for managing concurrent operations.
 Manage task in FIFO Order.
 Concurrent queue - It’s starting multiple tasks at the same time but not guarantee for the finish at same time. Its can finish any order 
@@ -445,7 +445,7 @@ Advantages of Dependency injection;
 Understand our code in a much clearer way and separates our concerns 
 - Testing : Create mock objects and allows us to understand the behaviour of our code. Do not have to change any of its internal code. 
 
-39.Unit testing (Swinject - Module separation,  Cuckoo - Mocking frameworks for unit tests).
+39.Unit testing (Swinject - Module separation,  Cuckoo - Mocking frameworks for unit tests)
 Link:https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 
 40.Bluetooth normal and classic
@@ -514,7 +514,7 @@ NSMutableArray : Mutable subclass of NSArray.
 Any - can represent an instance of any type at all, including function types and optional types.
 AnyObject - can represent an instance of any class type. Reference type. Equal to ID in objective C.
 		
-47. Different types of storage available in iOS?
+47. Different types of storage available in iOS
 SQLite - Define relation between tables and schema for all tables.Manually write queries to fetch data, Need to query results and map those to models. Queries are very fast.
 PList - Create object and serialise them to disk, Can’t use complex queries to filter results, slow, not thread safe, Every time, need to serialise or deserialise, store small object of  primitive types.(String, Number, Bool, Data, Dates, Arrays, Dictionary).
 CoreData - Persist or cache data on a single device, or sync data to multiple devices with CloudKit, View synchronisation, versioning and migration, Background data tasks, Undo or redo of individual or batched changes, Save data without administering database directly.
