@@ -57,7 +57,7 @@ This cheat sheet to crack interview for iOS
 51. GIT Branching - GIT squash
 52. Swift print() vs dump ()
 53. Content hugging  vs compression resistance 
-54. Topics to be checked : Jira, Jenkins, Rx swift & Reactivex, Android, Javascript, Realm DB, Alomafire, Authentication Mechanisms - OAuth2, OpenID.
+54. Topics to be checked - Jira, Jenkins, Rx swift & Reactivex, Android, Javascript, Realm DB, Alomafire, Authentication Mechanisms - OAuth2, OpenID.
 55. iOS SDK features and Xcode - 
      Current iOS 14.5, Xcode 12.5, MacOS BigSur(11.0), Swift 5.0
      New Release - iOS 15, Xcode 13, MacOS BigSur(11.5), Swift 5.5
