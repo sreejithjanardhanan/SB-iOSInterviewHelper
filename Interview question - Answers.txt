@@ -27,6 +27,7 @@ Tuples
 Optional Types - crash resistant
 Fast/High speed - LLVM compiler transforms swift code into optimised native code.
 Support dynamic library.
+Multipurpose and multi paradigm.
 
 4. Difference between class and structure when to use:
 
@@ -382,7 +383,7 @@ Single responsibility principle
 - VIPER
 Link: https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
 
-32. Auto Layout
+32. Auto layout vs Size class
 3 ways : Layout anchors(item1.attribute(relation)multiplier*item2.attribute+constant), NSLayout constraint, Visual format language.
 
 33. Solid principles
@@ -409,14 +410,14 @@ Based on reference-counting.
 Each object defined in Swift has an implicit variable called a reference count. 
 This reference count is increased whenever an object is referenced somewhere, and so decreased when the object is not referenced anymore.
 
-36. Properties
+36. Properties in swift(atomic & non-atomic, assign, strong, weak, retain and copy)
 Stored property - store variable and constant, Given by class & struct, Can’t define in extension.
 Computed property - calculated rather than store, always var, given by class, struct, enum, provide getter and optional setter.
 Lazy stored property - initial value is not calculated till the time of use. Always variable.
 Property observer - observe and respond to changes in property value. Defined on stored property, overridden stored and computer property. Not defined on computational property, lazy stored property.
 Type property(static) - only one copy.
 
-37.Threads and operations queue
+37.Threads, Operations queue and GCD.
 Low-level API for managing concurrent operations.
 Manage task in FIFO Order.
 Concurrent queue - It’s starting multiple tasks at the same time but not guarantee for the finish at same time. Its can finish any order 
@@ -444,7 +445,7 @@ Advantages of Dependency injection;
 Understand our code in a much clearer way and separates our concerns 
 - Testing : Create mock objects and allows us to understand the behaviour of our code. Do not have to change any of its internal code. 
 
-39.Unit test
+39.Unit testing (Swinject - Module separation,  Cuckoo - Mocking frameworks for unit tests).
 Link:https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 
 40.Bluetooth normal and classic
@@ -470,6 +471,8 @@ Configure input and out stream for particular accessory
 Handle communication for streams using stream handle event function
 Accessory did disconnect 
 
+41.Associated type, mutating, Optional prototypes
+
 42. Security :
 Enable apple transport security.
 SSL Pinning - Protects man in the middle attack.
@@ -480,7 +483,7 @@ Data protection in apple which encrypts the sandbox when device locked. once jai
 Auto-correction should be turned off for fields used for sensitive user data input  in keyboard.
 System takes screenshot when app goes background. Mechanism of masking screen need to be done.
 
-45. Framework
+43. Framework
 Cocoa touch framework vs Cocoa touch static library -  A static library is a collection of compiled source Files which is then linked directly into an app’s binary. That is, it becomes a part of your app’s binary. A framework is a standalone entity that contains a binary containing compiled code (along with any related resources) that is a standalone unit itself.
 Cocoa touch framework support from iOS 8. Before cocoa touch static library to be used.  Cocoa touch library doesn’t support swift.
 Frameworks also require less manual work to setup in a project than static libraries. 
@@ -495,9 +498,46 @@ STEPS:
 check e-mail and conFirm CocoaPods session by clicking the conformation link.
 - Account is activated now and can publish the cocoa pod by running command -> pod trunk push demoTouchFramework.podspec
 
-46. Reflection
+44. Reflection
 Swift reflection should rather be called introspection, as its current functionality allows us to look at the objects’ properties without modifying them. The concept is represented by Mirror structure.
 Type aliases -> Child alias - an element of the reflected instance structure eg: property or enum
 Display style - ancestor representation -> decide how an object’s superclass should be reflected, query descendants -> ancestors - superclass, descendants - children of children.
 constructor - init(reflecting: Any), init(_: children: displayStyle: ancestorRepresentation:). More customisation use custom deflectable protocol.
 Two possible application of reflection - logging, generating mocks for unit testing. Apple itself uses reflection to display values in debugger and playgrounds.
+
+45. NS Array vs Array Vs NSMutable array:
+Array - Struct, Value type in Swift, Hold only one type of data, Let and Var for immutable and mutable.
+NSArray - Immutable Objective C class, Reference type in Swift, Hold different types of data.
+NSMutableArray : Mutable subclass of NSArray.
+
+46. AnyObject vs Any :
+Any - can represent an instance of any type at all, including function types and optional types.
+AnyObject - can represent an instance of any class type. Reference type. Equal to ID in objective C.
+		
+47. Different types of storage available in iOS?
+SQLite - Define relation between tables and schema for all tables.Manually write queries to fetch data, Need to query results and map those to models. Queries are very fast.
+PList - Create object and serialise them to disk, Can’t use complex queries to filter results, slow, not thread safe, Every time, need to serialise or deserialise, store small object of  primitive types.(String, Number, Bool, Data, Dates, Arrays, Dictionary).
+CoreData - Persist or cache data on a single device, or sync data to multiple devices with CloudKit, View synchronisation, versioning and migration, Background data tasks, Undo or redo of individual or batched changes, Save data without administering database directly.
+Userdefault - Thread safe, Not encrypted, Can be altered globally, run in inconsistent state easily, Easy to use with simple API, Shared between app and app extensions.
+Keychain - Encrypted, Thread safe, secure. Reading lot of information can be slow, Not recommended for storing large object.
+Saving files to disk : Thread safe, File manager can be used with iCloud storage, Reading/Saving files can be very slow.
+Realm - Fast, zero copy object store, open source, Implemented from scratch.
+Link : https://www.iosapptemplates.com/blog/ios-development/data-persistence-ios-swift
+		
+48. Bundle vs Apple ID
+An App ID is a two-part string used to identify one or more apps from a single development team. The string consists of a Team ID and a Bundle ID search strings, with a period (.) separating the two.The Team ID is supplied by Apple and is unique to a specific development team, while a Bundle ID is supplied by the developer to match either the Bundle ID of a single app or a set of Bundle IDs of a group of apps.
+		
+49. Copy on write
+Multiple copies of an array share the same storage until you modify one of the copies. Supported for String and all collection types - Array, Dictionary and Set.
+
+50. “==“ vs “===“
+== Checks if values are the same, comparing value types. === compares reference types, seeing if they are identical which means that they are at the same memory address.
+
+51. GIT Branching - GIT squash
+Combining multiple commits into one commit.
+
+52. Swift print() vs dump ()
+dump() outputs the whole class hierarchy, while print() simply outputs the class name.
+
+53.Content hugging  vs compression resistance 
+Content hugging cannot grow, compression resistance cannot shrink.
