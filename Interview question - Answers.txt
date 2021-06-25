@@ -384,7 +384,8 @@ Single responsibility principle
 Link: https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
 
 32. Auto layout vs Size class
-3 ways : Layout anchors(item1.attribute(relation)multiplier*item2.attribute+constant), NSLayout constraint, Visual format language.
+AutoLayout - 3 ways : Layout anchors(item1.attribute(relation)multiplier*item2.attribute+constant), NSLayout constraint, Visual format language.
+Size Classes - iOS method of creating adaptable layouts that look great on all sizes and orientations of iPhone and iPad.
 
 33. Solid principles
 Single responsibility principle - Single responsibility eg: Protocols and Delegation. 
