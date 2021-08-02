@@ -427,6 +427,25 @@ Copy - Will copy first , then increases retain count.
 Read write/ read only - read write default. Read only only setter.
 
 37.Threads, Operations queue and GCD
+Process - An instance of an executing app Thread, Path of execution for code 
+Multithreading - Multiple threads or multiple paths of execution running at the same time. 
+Concurrency -  Execute multiple tasks at the same time in a scalable manner. 
+Queues - Queues are lightweight data structures that manage objects in the order of First-in, First-out (FIFO).
+NSOperation and NSOperationQueue :
+High-level Objective-C classes.
+NSOperationQueue is objective C wrapper over GCD.
+Benefits of NSOperation:
+Pause, Cancel, Resume an NSOperation 
+Control over the operation's life cycle 
+Set dependency between two NSOperations 
+Can monitor the state of an operation or operation queue -  ready, executing or finished. 
+The NSOperation and NSOperationQueue classes have a number of properties that 
+can be observed, using KVO (Key-Value Observing). 
+Specify the maximum number of queued operations that can run simultaneously. 
+Use NSOperation for more control over queue. and for simple cases where you want less overhead use GCD. 
+NSOperationQueue :  Allows a pool of threads to be created and used to execute NSOperations in parallel. Operation queues aren’t part of GCD. 
+NSBlockOperation : Allows you to create an NSOperation from one or more closures. NSBlockOperations can have multiple blocks, that run concurrently.
+GCD:
 Low-level API for managing concurrent operations.
 Manage task in FIFO Order.
 Concurrent queue - It’s starting multiple tasks at the same time but not guarantee for the finish at same time. Its can finish any order 
@@ -525,12 +544,13 @@ STEPS:
 check e-mail and conFirm CocoaPods session by clicking the conformation link.
 - Account is activated now and can publish the cocoa pod by running command -> pod trunk push demoTouchFramework.podspec
 
-44. Reflection
+44. Posing, Introspection, Reflection, Swizzling
+Posing - Objective-C permits a class to entirely replace another class within an application.
+Introspection - Ability to provide information about objects/classes at runtime . Objective C runtime supports introspection. Type of information : method name, arguments, implementation, instance variables.
+Reflection - Ability to add new classes and to add/modify interfaces of existing classes, modify the relationship between classes. Eg: the objC runtime allows new classes to be added, methods to be added to a class and instance variables to be added to a class created at runtime. It also allows the superclass of a class to be replaced by another class
 Swift reflection should rather be called introspection, as its current functionality allows us to look at the objects’ properties without modifying them. The concept is represented by Mirror structure.
-Type aliases -> Child alias - an element of the reflected instance structure eg: property or enum
-Display style - ancestor representation -> decide how an object’s superclass should be reflected, query descendants -> ancestors - superclass, descendants - children of children.
-constructor - init(reflecting: Any), init(_: children: displayStyle: ancestorRepresentation:). More customisation use custom deflectable protocol.
 Two possible application of reflection - logging, generating mocks for unit testing. Apple itself uses reflection to display values in debugger and playgrounds.
+Swizzling - The term “Swizzling” in objective C refers to exchanging the implementation of two methods(class or instance) at runtime. So you apply introspection to access method implementations and reflection to actually exchange the method implementation to achieve swizzling.
 
 45. NS Array vs Array Vs NSMutable array:
 Array - Struct, Value type in Swift, Hold only one type of data, Let and Var for immutable and mutable.
