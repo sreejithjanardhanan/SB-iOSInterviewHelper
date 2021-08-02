@@ -47,7 +47,7 @@ This cheat sheet to crack interview for iOS
 41. Associated type, mutating, Optional prototypes
 42. Security
 43. Frameworks
-44. Reflection
+44. Posing, Introspection, Reflection, Swizzling
 45. NS Array vs Array Vs NSMutable array
 46. AnyObject vs Any
 47. Different types of storage available in iOS
