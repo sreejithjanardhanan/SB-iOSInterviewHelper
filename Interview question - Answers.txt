@@ -339,6 +339,41 @@ Fetch from Core Data :
 
 Link: https://medium.com/xcblog/core-data-with-swift-4-for-beginners-1fc067cca707
 
+NSManagedObjectContext:
+Manages a collection of model objects, instances of the NSManagedObject class.  
+Application to have multiple managed object contexts. 
+Each managed object context is backed by a persistent store coordinator
+Managed object context can contain one or more managed object model instances. 
+
+PersistentStoreCoordinator :
+Communicates between managed object context and store and also takes care of loading and caching data. Core Data has caching built-in.
+
+PersistentStore and Different types :
+Abstract base class for all Core Data persistent stores.Thread safe. XML, Binary, SQLite
+
+Multithreading with core data :
+Multithreading in core data achieved with multiple contexts 
+Eg: Background context for long-running tasks (batch inserting/fetching/updating) and update UI on the main thread.
+
+Concurrency types in managed object context:
+Private queue concurrency - specifies the context that will be associated with a private dispatch queue instead of the main queue. No longer interfere with UI.
+Main Queue Concurrency -  the default type, specifies that the context will be associated with the main queue. Eg : Fetched results controller
+
+Note : According to the Core Data concurrency rule, each thread must have its own managed object context. This is because NSManagedObjectContext and NSManagedObject, the two most fundamental objects in Core Data, is not thread-safe. They shouldn’t be initialized in one thread and accessed from a different thread.
+
+SQLite :
+- Database
+- Slow as compared to core data, 
+- Operates on data, store in Disk, 
+- Can Drop table and Edit data Without loading them in memory, 
+- Have Data Constraints features
+
+Core data :
+- Operates on in memory(data needs to be loaded from disk to memory)
+- Core data is ORM(Object graph model) which create a layer between the database and the UI
+- Need to load entire data if we need update drop table,
+- Don’t have Data Constraints if required need to implement by business logic.
+
 27. Protocol inheritance - example, extension :
 Defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. 
 Adopted by a class, structure, or enumeration to provide an actual implementation of those requirements. 
