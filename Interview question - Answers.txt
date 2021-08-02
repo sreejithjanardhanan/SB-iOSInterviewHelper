@@ -351,7 +351,7 @@ Protocol extension - Support multiple inheritance. Allow classes and structures 
 28. Higher order function :
 Higher order functions are simply functions that operate on other functions by either taking a function as an argument, or returning a function
 - Sorted
-- Map
+- Map - Transform a value to another value, CompactMap - Remove nil values, Flat Map - Flatten result one level down
 - Filter
 - Reduce
 
@@ -459,6 +459,17 @@ XCTest Framework
 XCTestCase subclass
 Function name should start with test
 Test core functionality : Model class, Methods and Interaction with controller, Parsing, API call.
+First - Fast, Independent, Repeatable, self validating, Timely.
+setupWithError() - Initialization
+tearDownWithError() - Deinitialisation
+sut - systemUnderTest
+Given, when, Then
+Model class - XCAssertEqual
+API Call - XCExpection(description:), promise.fulfill, XCTFail, wait(for: timeout:), XCTAssertNil, XCTAssertEqual, XCTSkipUnless
+Faking Object and Interaction, Faking input from stub
+UITesting
+PerfomanceTesting
+CodeCoverage
 Link:https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial
 
 40.Bluetooth normal and classic
